@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/app/components/header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,12 +24,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  
   return (
     <html lang="en">
-      <body
+      <body suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <div className={'card mt-24 mb-24 bg-neutral-100 dark:bg-neutral-900 max-w-lg rounded-lg overflow-hidden shadow-lg'}>
+          <Header />
+            {children}
+        </div>
       </body>
     </html>
   );

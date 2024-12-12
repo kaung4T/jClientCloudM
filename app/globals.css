@@ -3,14 +3,18 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #E5E7EB;
   --foreground: #171717;
+  --card: #fff;
+  --border: #d2d2d2;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #1e1e1e;
     --foreground: #ededed;
+    --card: #1a1a1a;
+    --border: #303030;
   }
 }
 
@@ -18,4 +22,33 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+}
+
+.card {
+  width: 37%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.context {
+  padding: 1rem 1rem 1rem 1rem;
+}
+
+.header {
+  border-bottom: 1px solid var(--border);
+}
+
+.header ul {
+  display: flex;
+  justify-content: center;
+}
+
+.header ul li {
+  margin-right: 23px;
+  padding: 0.8rem;
+}
+
+.form-input-m {
+  outline: none;
 }
