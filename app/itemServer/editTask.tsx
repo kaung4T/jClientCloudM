@@ -11,7 +11,6 @@ import { addTaskSchema } from '../zod';
 import { useRouter } from 'next/navigation';
 
 function EditTask({ d, i } : { d: itemType, i: number }) {
-    // const [ inputTask, setInputTask ] = useState<item[]>([...task]);
     const { register, handleSubmit, reset, getValues, setValue } = useForm();
     const [ dataState, setDataSate ] = useState<string>(d.task);
     const [ inputState, setInputState ] = useState<Boolean | null>(false);
@@ -51,17 +50,12 @@ function EditTask({ d, i } : { d: itemType, i: number }) {
     }
 
     function updateClick (id: number, index: number) {
-        // const all_task_name = document.querySelectorAll(`.task_name_${id}`) as NodeListOf<HTMLInputElement>;
         setInputState(true);
         setEditState(true);
     }
 
     function inputChange (e: React.ChangeEvent<HTMLInputElement>, id: number, index: number) {
-        // const newTask: item[] = [...task];
-        // newTask[index].task = e.target.value;
-        // setInputTask([...newTask]);
         setDataSate(e.target.value)
-        // d.task = e.target.value;
         setValue(`updateTask`, e.target.value);
     }
 
@@ -82,9 +76,6 @@ function EditTask({ d, i } : { d: itemType, i: number }) {
                                     <p className={'p-2 text-sm  border-b dark:border-neutral-800'}>{d.task}</p>
                                 )
                             }
-                            {/* <input type="text" name={`updateTask.${i}.value`} key={i} value={ d.task } onChange={ (e) => { inputChange(e, d.id, i) }} onClick={ (e) => { inputClick(e, d.id, i) }} 
-                            ref={ (ref) => { taskRef.current[i] = ref! }} className={'hidden form-input-m cursor-pointer block w-80 p-2 text-white text-sm bg-neutral-200 focus:border-b focus:border-gray-300 focus:ring-blue-500 focus:border-blue-800 dark:bg-neutral-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'} 
-                            required /> */}
                         </div>
                         <div className={'mt-3 text-sky-500'}>
                             { 
