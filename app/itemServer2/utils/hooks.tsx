@@ -28,7 +28,6 @@ export const CreateItem = async (context: {"task": string}) => {
         const response = await prisma.items.create({
             data: context
         });
-        console.log(response)
         return response;
     }
     catch (error) {

@@ -1,13 +1,13 @@
 
 
-import ItemServer2 from "./itemServer2/page";
+import ItemServer from "./itemServer/page";
 
 export default function Home() {
   return (
     <>
 
       <div>
-        <ItemServer2 />
+        <ItemServer />
       </div>
 
     </>
