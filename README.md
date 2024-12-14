@@ -1,6 +1,7 @@
 ```bash
-npm run dev
-
+pnpm install
+pnpm prisma-generate
+pnpm run dev
 ```
 
 ```prisma db
