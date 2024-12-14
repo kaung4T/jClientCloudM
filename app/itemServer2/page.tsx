@@ -6,7 +6,7 @@ import { itemTypePrisma } from '@/app/types/index';
 async function ItemServer2() {  
   const task: itemTypePrisma[] | null = await GetItemsAll();
 
-  if (!task) { return ( <><p className="text-center p-5"> Loading... </p> <p className="text-center p-5">SQLite is not working in Vercel</p></> )};
+  if (!task) { return ( <><p className="text-center p-5"> Loading... </p></> )};
 
   return (
     <>
