@@ -9,7 +9,6 @@ import React from 'react';
 export const GetItemsAll = async () => {
     try {
         const response = await prisma.items.findMany();
-        
         response.map((d: itemTypePrisma, index: number) => {
             const validate = taskSchemaPrisma.safeParse({id: d.id, task: d.task});
             if (validate.error) {
@@ -17,7 +16,6 @@ export const GetItemsAll = async () => {
                 return;
             }
         });
-        
         return response;
     }
     catch (error) {

@@ -7,6 +7,7 @@ const server: AxiosRequestConfig = {
   headers: {
     "Accept": "*/*, application/json, text/plain",
     "Content-Type": "application/json",
+    "Authorization": `Bearer ${process.env.AUTH_TOKEN}`
   }
 }
 

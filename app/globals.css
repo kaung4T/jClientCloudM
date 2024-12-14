@@ -52,3 +52,7 @@ body {
 .form-input-m {
   outline: none;
 }
+
+.active {
+  color: #0284c7;
+}

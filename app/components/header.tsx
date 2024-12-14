@@ -1,14 +1,18 @@
+"use client"
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 function Header() {
+  const path: string = usePathname();
   return (
     <>
         <div className={'mb-2 header'}>
             <ul>
-                <li><Link href={'/'}> Prisma </Link></li>
-                <li><Link href={'/itemServer'}> Laravel </Link></li>
-                <li><Link href={'/infoApi'}> API </Link></li>
+                <li><Link className={`${path === "/" ? "active" : ""}`} href={"/"}> Prisma </Link></li>
+                <li><Link className={`${path === "/itemServer" ? "active" : ""}`} href={"/itemServer"}> Laravel </Link></li>
+                <li><Link className={`${path === "/infoApi" ? "active" : ""}`} href={"/infoApi"}> API </Link></li>
             </ul>
         </div>
     </>
