@@ -1,5 +1,9 @@
 import { z } from "zod";
 
+export const taskSchema= z.object({
+    id: z.number(),
+    task: z.string()
+})
 
 export const addTaskSchema = z.object({
     id: z.number().optional(),

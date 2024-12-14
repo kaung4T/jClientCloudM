@@ -13,8 +13,8 @@ function DeleteTask( { d } : { d: itemType }) {
 
   return (
     <>
-        <div className={'flex items-center text-sm cursor-pointer'} onClick={ () => deleteButton(d.id)}>
-            <span className={'mr-1'}>Delete</span><AiFillDelete className={'text-red-600'} />
+        <div className="flex items-center text-sm cursor-pointer" onClick={ () => deleteButton(d.id)}>
+            <span className="mr-1 text-neutral-60 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-500">Delete</span><AiFillDelete className="text-red-600" />
         </div>
     </>
   )

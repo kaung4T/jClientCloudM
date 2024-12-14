@@ -1,12 +1,25 @@
 import { laravelApi } from '@/app/api/serverApi';
+import { taskSchema } from '@/app/zod';
 import { revalidatePath } from 'next/cache';
 import React from 'react';
 
+type itemType = {
+    id: number,
+    task: string
+}
 
 export const GetItemsAll = async () => {
     try {
-        const response = await laravelApi.get('all_item');
+        const response = await laravelApi.get("all_item");
         const jsonData = await response.data.data;
+
+        jsonData.map((d: itemType, index: number) => {
+            const validate = taskSchema.safeParse({id: d.id, task: d.task});
+            if (validate.error) {
+                return;
+            }
+        });
+        
         return jsonData
     }
     catch (error) {
@@ -16,7 +29,7 @@ export const GetItemsAll = async () => {
 
 export const CreateItem = async (context: {"task": string}) => {
     try {
-        const response = await laravelApi.post('create_item', context);
+        const response = await laravelApi.post("create_item", context);
         const jsonData = await response.data;
         return jsonData
     }
