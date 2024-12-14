@@ -11,6 +11,8 @@ datasource db {
 }
 
 model items {
-  id   String @id @default(cuid())
-  task String
+  id         String   @id @default(cuid())
+  task       String
+  updated_at DateTime @updatedAt
+  created_at DateTime @default(now())
 }

@@ -31,6 +31,7 @@ export const CreateItem = async (context: {"task": string}) => {
         return response;
     }
     catch (error) {
+        console.log(error)
         return null;
     }
 };
