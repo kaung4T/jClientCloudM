@@ -105,7 +105,6 @@ function EditTask({ d, i } : { d: itemTypePrisma, i: number }) {
                     </div>
                     <div className="text-xs text-end text-neutral-400 dark:text-neutral-400">
                         <p className="mb-1">{new Date(d.updated_at).toLocaleDateString()}</p>
-                        <p>{new Date(d.updated_at).toLocaleTimeString()}</p>
                     </div>
                 </form>
             </div>
