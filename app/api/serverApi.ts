@@ -2,7 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import React from 'react';
 
 const server: AxiosRequestConfig = {
-  baseURL: "http://127.0.0.1:8000/api",
+  baseURL: "https://one.foodlifesavers.com/api",
   timeout: 1000,
   headers: {
     "Accept": "*/*, application/json, text/plain",
